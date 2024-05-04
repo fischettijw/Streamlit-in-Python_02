@@ -76,6 +76,10 @@ img = st.file_uploader("Please upload an Image", type=("png", "jpg", "webp"),
                        accept_multiple_files=True)
 if img is not None:
     st.image(img)
-vid = st.file_uploader("Please upload an Image", type="mp4")
+vid = st.file_uploader("Please upload a Video", type="mp4")
 if vid is not None:
     st.video(vid)
+
+add_sidebar = st.sidebar.selectbox("What is your favorite sport?",
+                                   ("baseball", "soccer",
+                                    "basketball"))
