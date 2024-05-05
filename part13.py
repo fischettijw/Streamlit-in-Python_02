@@ -85,26 +85,50 @@ import streamlit as st
 #     st.video(vid)
 
 # Start video #10
-num = st.slider("This is a slider", min_value=50, max_value=150, value=70)
-st.write(num)
+# num = st.slider("This is a slider", min_value=50, max_value=150, value=70)
+# st.write(num)
 
-txt = st.text_input("Enter your Name", max_chars=50)
-st.write(txt)
+# txt = st.text_input("Enter your Name", max_chars=50)
+# st.write(txt)
 
-para = st.text_area("Small Essay")
-st.write(para)
+# para = st.text_area("Small Essay")
+# st.write(para)
 
-date = st.date_input("Enter your birthdate",
-                     min_value=datetime.date(1940, 2, 13))
-st.write(date)
+# date = st.date_input("Enter your birthdate",
+#                      min_value=datetime.date(1940, 2, 13))
+# st.write(date)
 
-tim = st.time_input("Enter a time")
-st.write(tim)
+# tim = st.time_input("Enter a time")
+# st.write(tim)
 
-# Start Video 11    https://www.youtube.com/watch?v=dPYlqTGA6wc&list=PLa6CNrvKM5QU7AjAS90zCMIwi9RTFNIIW&index=11
-p_bar = st.progress(0)
-prog_bar = st.empty()
-for i in range(0,10):
-    p_bar.progress((i+1) * 10)
-    prog_bar.write(str((i+1) * 10) + " %")
-    time.sleep(1)
+# Start Video 11
+# p_bar = st.progress(0)
+# prog_bar = st.empty()
+# for i in range(0,10):
+#     p_bar.progress((i+1) * 10)
+#     prog_bar.write(str((i+1) * 10) + " %")
+#     time.sleep(1)
+
+# Start Video 12     https://www.youtube.com/watch?v=FYTqDKtIbGg&list=PLa6CNrvKM5QU7AjAS90zCMIwi9RTFNIIW&index=12
+
+st.markdown("<h1 style= 'text-align: center; color: yellow'>User Registration</h1>",
+            unsafe_allow_html=True)
+# st.title("User Registration")
+
+# form = st.form("User Registration")
+# form.text_input("First Name")
+# form.form_submit_button("Submit")
+with st.form("Registration"):
+    col1, col2 = st.columns([1, 2])
+    f_name = col1.text_input("First Name")
+    l_name = col2.text_input("Last Name")
+    pw1 = st.text_input("Password")
+    pw2 = st.text_input("Confirm Password")
+    email = st.text_input("Email Address")
+# Start Video 13     https://www.youtube.com/watch?v=p33C0AHN-DE&list=PLa6CNrvKM5QU7AjAS90zCMIwi9RTFNIIW&index=13
+    day, month, year = st.columns(3)
+    d = day.text_input("Day")
+    m = month.text_input("Month")
+    y = year.text_input("Year")
+    st.form_submit_button("Submit Info")
+    st.write(f"Day {d}   Month {m}     Year {y}")

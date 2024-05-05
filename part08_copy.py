@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+
 st.title("Hi, I am Streamlit Web App")
 st.subheader("I am your Subheader")
 st.header("I am Header")
@@ -19,7 +20,7 @@ print("Hello World")
 def funct():
     return 0
     """
-# st.code(my_code, language="python")
+st.code(my_code, language="python")
 
 st.write("## H2")
 st.metric(label="Wind Speed", value="120ms⁻¹", delta="-1.4ms⁻¹")
